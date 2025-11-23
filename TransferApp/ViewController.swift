@@ -40,9 +40,26 @@ class ViewController: UIViewController, UpdatableDataController {
         updateLabel(withText: updatedData)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        определяем индентификатор segue
+        switch segue.identifier {
+        case "toEditScreen":
+            prepareEditScreen(segue)
+        default:
+            break
+        }
+    }
+    
     private func updateLabel(withText text: String) {
         dataLabel.text = text
     }
 
+    private func prepareEditScreen(_ segue: UIStoryboardSegue) {
+//        безопасно извлекаем опциональное значение
+        guard let destinationController = segue.destination as? SecondViewController else {
+            return
+        }
+        destinationController.updatingData = dataLabel.text ?? ""
+    }
 }
 
