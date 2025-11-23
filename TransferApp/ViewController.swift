@@ -33,13 +33,29 @@ class ViewController: UIViewController, UpdatableDataController, DataUpdateProto
     @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
     
     @IBAction func editDataWithDelegate(_ sender: UIButton) {
-        let stpryboard = UIStoryboard(name: "Main", bundle: nil)
-        let editScreen = storyboard?.instantiateViewController(
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(
             withIdentifier: "SecondViewController"
         ) as! SecondViewController
         editScreen.updatingData = dataLabel.text ?? ""
 //        устанавливаем текущий класс в качестве делегата
         editScreen.handleUpdatedDataDelegate = self
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
+    
+    @IBAction func editDataWithClosure(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(
+            withIdentifier: "SecondViewController"
+        ) as! SecondViewController
+//        передаем данные
+        editScreen.updatingData = dataLabel.text ?? ""
+//        передаем замыкание
+        editScreen.completionHandler = { [unowned self] updatedValue in
+            updatedData = updatedValue
+            updateLabel(withText: updatedValue)
+        }
+//        открываем следующий экран
         self.navigationController?.pushViewController(editScreen, animated: true)
     }
     

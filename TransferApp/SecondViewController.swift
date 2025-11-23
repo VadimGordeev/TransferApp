@@ -16,6 +16,7 @@ class SecondViewController: UIViewController, UpdatingDataController {
     @IBOutlet var dataTextField: UITextField!
     var updatingData: String = ""
     var handleUpdatedDataDelegate: DataUpdateProtocol?
+    var completionHandler: ((String) -> Void)?
     
     @IBAction func saveDataWithProperty (_ sender: UIButton) {
         self.navigationController?.viewControllers.forEach{ viewController in
@@ -33,6 +34,12 @@ class SecondViewController: UIViewController, UpdatingDataController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func saveDataWithClosure (_ sender: UIButton) {
+        let updatedData = dataTextField.text ?? ""
+        completionHandler?(updatedData)
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,6 +60,20 @@
                                     <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sv8-fe-68s"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVn-68-Pop">
+                                <rect key="frame" x="30" y="678" width="333" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Change with closure">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithClosure:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhG-tS-pez"/>
+                                    <action selector="editDataWithDelegate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Xy-mO-h6c"/>
+                                    <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZc-S2-0dG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.73861855196832671" green="0.544841373329225" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -76,6 +89,9 @@
                             <constraint firstAttribute="trailing" secondItem="83w-Xr-DLS" secondAttribute="trailing" constant="30" id="MY6-qE-Yhl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7qf-Zq-mRY" secondAttribute="trailing" constant="30" id="QhL-Fe-Tdr"/>
                             <constraint firstItem="7qf-Zq-mRY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="TA0-Ah-FSn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MVn-68-Pop" secondAttribute="trailing" constant="30" id="Z34-Fo-r7z"/>
+                            <constraint firstItem="MVn-68-Pop" firstAttribute="top" secondItem="83w-Xr-DLS" secondAttribute="bottom" constant="30" id="jpN-FC-cNY"/>
+                            <constraint firstItem="MVn-68-Pop" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="was-yJ-ztJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scene A" largeTitleDisplayMode="always" id="PDU-KZ-aIZ"/>
@@ -159,6 +175,21 @@
                                     <action selector="saveDataWithProperty:" destination="Vaz-qL-gcz" eventType="touchUpInside" id="b6X-3l-1Yk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92y-k8-Bnr">
+                                <rect key="frame" x="30" y="677" width="333" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Save with closure">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8bO-ko-zPl"/>
+                                    <action selector="saveDataWithClosure:" destination="Vaz-qL-gcz" eventType="touchUpInside" id="N0j-uo-gZF"/>
+                                    <action selector="saveDataWithDelegate:" destination="Vaz-qL-gcz" eventType="touchUpInside" id="j2g-Ji-eh8"/>
+                                    <action selector="saveDataWithProperty:" destination="Vaz-qL-gcz" eventType="touchUpInside" id="oJ6-sL-B1o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lbn-Mm-KYe"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -169,12 +200,15 @@
                             <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="J02-6k-3xw" secondAttribute="trailing" constant="30" id="DmQ-X2-Pe7"/>
                             <constraint firstItem="pew-UZ-9C8" firstAttribute="centerX" secondItem="9gW-hK-kwl" secondAttribute="centerX" id="FWa-wu-UO2"/>
                             <constraint firstItem="pew-UZ-9C8" firstAttribute="leading" secondItem="Lbn-Mm-KYe" secondAttribute="leading" constant="30" id="JI9-0a-QJb"/>
+                            <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="92y-k8-Bnr" secondAttribute="trailing" constant="30" id="Qpm-ZX-Qz5"/>
                             <constraint firstItem="kwJ-YQ-N1m" firstAttribute="leading" secondItem="Lbn-Mm-KYe" secondAttribute="leading" constant="30" id="SEw-GX-X4x"/>
                             <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="kwJ-YQ-N1m" secondAttribute="trailing" constant="30" id="cAi-PA-SrF"/>
                             <constraint firstItem="pew-UZ-9C8" firstAttribute="centerY" secondItem="9gW-hK-kwl" secondAttribute="centerY" id="hnM-Nl-Sbb"/>
                             <constraint firstItem="J02-6k-3xw" firstAttribute="top" secondItem="kwJ-YQ-N1m" secondAttribute="bottom" constant="30" id="j1r-jx-m2W"/>
                             <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="Nfu-Fc-Zeo" secondAttribute="trailing" constant="30" id="jGD-j3-10S"/>
                             <constraint firstItem="Nfu-Fc-Zeo" firstAttribute="leading" secondItem="Lbn-Mm-KYe" secondAttribute="leading" constant="30" id="kjN-He-JIS"/>
+                            <constraint firstItem="92y-k8-Bnr" firstAttribute="top" secondItem="Nfu-Fc-Zeo" secondAttribute="bottom" constant="30" id="mzd-w1-aDf"/>
+                            <constraint firstItem="92y-k8-Bnr" firstAttribute="leading" secondItem="9gW-hK-kwl" secondAttribute="leading" constant="30" id="oJR-gY-nGn"/>
                             <constraint firstItem="kwJ-YQ-N1m" firstAttribute="top" secondItem="pew-UZ-9C8" secondAttribute="bottom" constant="30" id="viN-ZN-q8C"/>
                         </constraints>
                     </view>
