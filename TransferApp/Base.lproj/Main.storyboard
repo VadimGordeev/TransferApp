@@ -48,16 +48,32 @@
                                     <segue destination="Vaz-qL-gcz" kind="show" identifier="toEditScreen" id="LOp-LQ-dL1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83w-Xr-DLS">
+                                <rect key="frame" x="30" y="610" width="333" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Change with delegate">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithDelegate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QOu-Su-LFo"/>
+                                    <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sv8-fe-68s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.73861855196832671" green="0.544841373329225" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="7qf-Zq-mRY" firstAttribute="top" secondItem="aAU-Jq-7ny" secondAttribute="bottom" constant="30" id="6Xg-gY-G9i"/>
+                            <constraint firstItem="83w-Xr-DLS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7go-4g-8TN"/>
                             <constraint firstItem="aAU-Jq-7ny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7xe-2o-4Ab"/>
+                            <constraint firstItem="83w-Xr-DLS" firstAttribute="top" secondItem="Q0o-eH-GCT" secondAttribute="bottom" constant="30" id="8Or-e2-Eu0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q0o-eH-GCT" secondAttribute="trailing" constant="30" id="Bd9-xd-cFE"/>
                             <constraint firstItem="Q0o-eH-GCT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="FZX-Sh-c2K"/>
                             <constraint firstItem="aAU-Jq-7ny" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JIk-7C-Sar"/>
                             <constraint firstItem="Q0o-eH-GCT" firstAttribute="top" secondItem="7qf-Zq-mRY" secondAttribute="bottom" constant="30" id="LDi-Ga-27V"/>
+                            <constraint firstAttribute="trailing" secondItem="83w-Xr-DLS" secondAttribute="trailing" constant="30" id="MY6-qE-Yhl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7qf-Zq-mRY" secondAttribute="trailing" constant="30" id="QhL-Fe-Tdr"/>
                             <constraint firstItem="7qf-Zq-mRY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="TA0-Ah-FSn"/>
                         </constraints>
@@ -129,12 +145,27 @@
                                     <segue destination="hyx-hu-dnx" kind="unwind" identifier="toFirstScreen" unwindAction="unwindToFirstScreen:" id="7yA-mv-DSQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfu-Fc-Zeo">
+                                <rect key="frame" x="30" y="609" width="333" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Save with delegate">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5K-a8-J4L"/>
+                                    <action selector="saveDataWithDelegate:" destination="Vaz-qL-gcz" eventType="touchUpInside" id="kbF-hI-Ap0"/>
+                                    <action selector="saveDataWithProperty:" destination="Vaz-qL-gcz" eventType="touchUpInside" id="b6X-3l-1Yk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lbn-Mm-KYe"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="pew-UZ-9C8" secondAttribute="trailing" constant="30" id="06A-KK-jGv"/>
                             <constraint firstItem="J02-6k-3xw" firstAttribute="leading" secondItem="Lbn-Mm-KYe" secondAttribute="leading" constant="30" id="13p-dH-gIJ"/>
+                            <constraint firstItem="Nfu-Fc-Zeo" firstAttribute="top" secondItem="J02-6k-3xw" secondAttribute="bottom" constant="30" id="3PV-5Q-R3o"/>
                             <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="J02-6k-3xw" secondAttribute="trailing" constant="30" id="DmQ-X2-Pe7"/>
                             <constraint firstItem="pew-UZ-9C8" firstAttribute="centerX" secondItem="9gW-hK-kwl" secondAttribute="centerX" id="FWa-wu-UO2"/>
                             <constraint firstItem="pew-UZ-9C8" firstAttribute="leading" secondItem="Lbn-Mm-KYe" secondAttribute="leading" constant="30" id="JI9-0a-QJb"/>
@@ -142,6 +173,8 @@
                             <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="kwJ-YQ-N1m" secondAttribute="trailing" constant="30" id="cAi-PA-SrF"/>
                             <constraint firstItem="pew-UZ-9C8" firstAttribute="centerY" secondItem="9gW-hK-kwl" secondAttribute="centerY" id="hnM-Nl-Sbb"/>
                             <constraint firstItem="J02-6k-3xw" firstAttribute="top" secondItem="kwJ-YQ-N1m" secondAttribute="bottom" constant="30" id="j1r-jx-m2W"/>
+                            <constraint firstItem="Lbn-Mm-KYe" firstAttribute="trailing" secondItem="Nfu-Fc-Zeo" secondAttribute="trailing" constant="30" id="jGD-j3-10S"/>
+                            <constraint firstItem="Nfu-Fc-Zeo" firstAttribute="leading" secondItem="Lbn-Mm-KYe" secondAttribute="leading" constant="30" id="kjN-He-JIS"/>
                             <constraint firstItem="kwJ-YQ-N1m" firstAttribute="top" secondItem="pew-UZ-9C8" secondAttribute="bottom" constant="30" id="viN-ZN-q8C"/>
                         </constraints>
                     </view>

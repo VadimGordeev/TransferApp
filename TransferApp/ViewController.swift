@@ -11,7 +11,7 @@ protocol UpdatableDataController: AnyObject {
     var updatedData: String { get set }
 }
 
-class ViewController: UIViewController, UpdatableDataController {
+class ViewController: UIViewController, UpdatableDataController, DataUpdateProtocol {
     var updatedData: String = "Test data"
     @IBOutlet var dataLabel: UILabel!
 
@@ -31,6 +31,17 @@ class ViewController: UIViewController, UpdatableDataController {
     }
     
     @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
+    
+    @IBAction func editDataWithDelegate(_ sender: UIButton) {
+        let stpryboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard?.instantiateViewController(
+            withIdentifier: "SecondViewController"
+        ) as! SecondViewController
+        editScreen.updatingData = dataLabel.text ?? ""
+//        устанавливаем текущий класс в качестве делегата
+        editScreen.handleUpdatedDataDelegate = self
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +73,11 @@ class ViewController: UIViewController, UpdatableDataController {
             return
         }
         destinationController.updatingData = dataLabel.text ?? ""
+    }
+    
+    func onDataUpdate(data: String) {
+        updatedData = data
+        updateLabel(withText: data)
     }
 }
 
