@@ -7,8 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+protocol UpdatableDataController: AnyObject {
+    var updatedData: String { get set }
+}
+
+class ViewController: UIViewController, UpdatableDataController {
+    var updatedData: String = "Test data"
     @IBOutlet var dataLabel: UILabel!
 
     @IBAction func editDataWithProperty(_ sender: UIButton) {
@@ -31,6 +35,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateLabel(withText: updatedData)
+    }
+    
+    private func updateLabel(withText text: String) {
+        dataLabel.text = text
+    }
 
 }
 
