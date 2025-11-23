@@ -16,13 +16,14 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let editScreen = storyboard.instantiateViewController(
             withIdentifier: "SecondViewController"
-        ) as! SecondViewController
+        ) as! UpdatingDataController
         
 //        передаем данные
         editScreen.updatingData = dataLabel.text ?? ""
         
 //        переходим к следующему экрану
-        self.navigationController?.pushViewController(editScreen, animated: true)
+        self.navigationController?
+            .pushViewController(editScreen as! UIViewController, animated: true)
     }
     
     override func viewDidLoad() {

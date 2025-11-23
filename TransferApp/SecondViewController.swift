@@ -7,7 +7,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+protocol UpdatingDataController: AnyObject {
+    var updatingData: String { get set }
+}
+
+class SecondViewController: UIViewController, UpdatingDataController {
 
     @IBOutlet var dataTextField: UITextField!
     var updatingData: String = ""
