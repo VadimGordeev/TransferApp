@@ -30,6 +30,8 @@ class ViewController: UIViewController, UpdatableDataController {
             .pushViewController(editScreen as! UIViewController, animated: true)
     }
     
+    @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
